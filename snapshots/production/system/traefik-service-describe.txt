@@ -1,0 +1,27 @@
+Name:                     traefik
+Namespace:                kube-system
+Labels:                   app.kubernetes.io/instance=traefik-kube-system
+                          app.kubernetes.io/managed-by=Helm
+                          app.kubernetes.io/name=traefik
+                          helm.sh/chart=traefik-39.0.701_up39.0.7
+Annotations:              meta.helm.sh/release-name: traefik
+                          meta.helm.sh/release-namespace: kube-system
+Selector:                 app.kubernetes.io/instance=traefik-kube-system,app.kubernetes.io/name=traefik
+Type:                     LoadBalancer
+IP Family Policy:         PreferDualStack
+IP Families:              IPv4
+IP:                       10.43.93.251
+IPs:                      10.43.93.251
+LoadBalancer Ingress:     110.172.29.81 (VIP)
+Port:                     web  80/TCP
+TargetPort:               web/TCP
+NodePort:                 web  31475/TCP
+Endpoints:                10.42.0.12:8000
+Port:                     websecure  443/TCP
+TargetPort:               websecure/TCP
+NodePort:                 websecure  32113/TCP
+Endpoints:                10.42.0.12:8443
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Internal Traffic Policy:  Cluster
+Events:                   <none>

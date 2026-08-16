@@ -1,0 +1,15 @@
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1      281 76047 KUBE-ROUTER-FORWARD  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* kube-router netpol - TEMCG2JMHZYE7H7T */
+2        0     0 NETBIRD-RT-FWD-IN  all  --  wt0    *       0.0.0.0/0            0.0.0.0/0           
+3        0     0 ACCEPT     tcp  --  wt0    *       0.0.0.0/0            0.0.0.0/0            match-set nb0000093-dport src tcp dpt:443
+4        0     0            all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+5        0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            mark match 0x1bd20
+6        0     0 NETBIRD-RT-FWD-OUT  all  --  *      wt0     0.0.0.0/0            0.0.0.0/0           
+7        0     0 DROP       all  --  wt0    *       0.0.0.0/0            0.0.0.0/0           
+8        0     0 KUBE-PROXY-FIREWALL  all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate NEW /* kubernetes load balancer firewall */
+9        0     0 KUBE-FORWARD  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* kubernetes forwarding rules */
+10       0     0 KUBE-SERVICES  all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate NEW /* kubernetes service portals */
+11       0     0 KUBE-EXTERNAL-SERVICES  all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate NEW /* kubernetes externally-visible service portals */
+12       0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* KUBE-ROUTER rule to explicitly ACCEPT traffic that comply to network policies */ mark match 0x20000/0x20000
+13       0     0 FLANNEL-FWD  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* flanneld forward */

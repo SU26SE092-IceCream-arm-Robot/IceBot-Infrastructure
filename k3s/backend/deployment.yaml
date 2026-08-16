@@ -1,0 +1,135 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: icebot-backend
+  namespace: icebot
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: icebot-backend
+
+  template:
+    metadata:
+      labels:
+        app: icebot-backend
+
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+
+      containers:
+        - name: backend
+          image: ghcr.io/su26se092-icecream-arm-robot/icebot-backend:14606e8e91f81ede490211d57815195a5c868a42
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: http
+              containerPort: 8080
+
+          envFrom:
+            - secretRef:
+                name: icebot-env
+
+          env:
+            - name: ConnectionStrings__IceBot_DB
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: DB_CONNECTION_STRING
+
+            - name: PublicOrderAccess__KeyRingDirectory
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: PUBLIC_ORDER_ACCESS_KEY_RING_DIR
+
+            - name: Email__Host
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_HOST
+            
+            - name: Email__Port
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_PORT
+            
+            - name: Email__From
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_FROM
+            
+            - name: Email__DisplayName
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_DISPLAY_NAME
+            
+            - name: Email__UserName
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_USERNAME
+            
+            - name: Email__Password
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_PASSWORD
+            
+            - name: Email__EnableSsl
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_ENABLE_SSL
+            
+            - name: Email__InvitationBaseUrl
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_INVITATION_BASE_URL
+            
+            - name: Email__PasswordResetBaseUrl
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: EMAIL_PASSWORD_RESET_BASE_URL
+            - name: RobotArtifacts__ObjectStorage__Endpoint
+              value: "minio:9000"
+            
+            - name: RobotArtifacts__ObjectStorage__DownloadEndpoint
+              value: "minio:9000"
+            
+            - name: RobotArtifacts__ObjectStorage__AccessKey
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: MINIO_ROOT_USER
+            
+            - name: RobotArtifacts__ObjectStorage__SecretKey
+              valueFrom:
+                secretKeyRef:
+                  name: icebot-env
+                  key: MINIO_ROOT_PASSWORD
+
+          volumeMounts:
+            - name: keyring
+              mountPath: /app/keys
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: "1"
+              memory: 768Mi
+
+      volumes:
+        - name: keyring
+          persistentVolumeClaim:
+            claimName: icebot-keyring

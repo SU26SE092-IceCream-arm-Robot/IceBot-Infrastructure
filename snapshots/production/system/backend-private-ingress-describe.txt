@@ -1,0 +1,14 @@
+Name:             icebot-backend-private
+Labels:           <none>
+Namespace:        icebot
+Address:          110.172.29.81
+Ingress Class:    traefik
+Default backend:  <default>
+Rules:
+  Host                   Path  Backends
+  ----                   ----  --------
+  edge-api.icebot.io.vn  
+                         /   icebot-backend:8080 (10.42.0.103:8080)
+Annotations:             traefik.ingress.kubernetes.io/router.entrypoints: websecure
+                         traefik.ingress.kubernetes.io/router.tls: true
+Events:                  <none>

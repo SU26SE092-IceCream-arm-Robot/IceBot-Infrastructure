@@ -1,0 +1,139 @@
+Peers detail:
+ desktop-i9e9gc0.netbird.cloud:
+  NetBird IP: 100.81.13.127
+  NetBird IPv6: fd3e:3bf7:60ed:cca7:8f4d:5382:4c2d:7cf5
+  Public key: 5m0x7LMxp6BLXzRBkd2ecze8sKsCe11SJQ4VNnocVTE=
+  Status: Idle
+  -- detail --
+  Connection type: -
+  ICE candidate (Local/Remote): -/-
+  ICE candidate endpoints (Local/Remote): -/-
+  Relay server address: 
+  Last connection update: 23 hours, 21 minutes ago
+  Last WireGuard handshake: -
+  Transfer status (received/sent) 0 B/0 B
+  Quantum resistance: false
+  Networks: -
+  Latency: 0s
+
+ yukina-dev.netbird.cloud:
+  NetBird IP: 100.81.77.96
+  NetBird IPv6: fd3e:3bf7:60ed:cca7:a00a:b899:ac74:2266
+  Public key: sbQPcQHSIGxuA1WGYlSxRo0nic3QAR35yQxROhOhdUs=
+  Status: Idle
+  -- detail --
+  Connection type: -
+  ICE candidate (Local/Remote): -/-
+  ICE candidate endpoints (Local/Remote): -/-
+  Relay server address: 
+  Last connection update: 1 hour, 42 minutes ago
+  Last WireGuard handshake: -
+  Transfer status (received/sent) 0 B/0 B
+  Quantum resistance: false
+  Networks: -
+  Latency: 0s
+
+ laptop-jfpbo0rh.netbird.cloud:
+  NetBird IP: 100.81.111.64
+  NetBird IPv6: fd3e:3bf7:60ed:cca7:5c43:9f9c:a5f3:194f
+  Public key: JGCwL1hYUjki8Pj8BX/z2pY2Hodlaf2NEQ4g2y7ALzM=
+  Status: Connected
+  -- detail --
+  Connection type: Relayed
+  ICE candidate (Local/Remote): -/-
+  ICE candidate endpoints (Local/Remote): -/-
+  Relay server address: rels://streamline-sg-sin1-1.relay.netbird.io:443
+  Last connection update: 5 minutes, 58 seconds ago
+  Last WireGuard handshake: 1 minute, 34 seconds ago
+  Transfer status (received/sent) 2.4 KiB/2.7 KiB
+  Quantum resistance: false
+  Networks: -
+  Latency: 0s
+
+ phoenixz.netbird.cloud:
+  NetBird IP: 100.81.132.205
+  NetBird IPv6: fd3e:3bf7:60ed:cca7:9d04:9d41:e898:d27d
+  Public key: NdHLu+7SANSfxmcIahN2r/8atC7mLNVe1mRuvhicHFA=
+  Status: Idle
+  -- detail --
+  Connection type: -
+  ICE candidate (Local/Remote): -/-
+  ICE candidate endpoints (Local/Remote): -/-
+  Relay server address: 
+  Last connection update: 7 hours, 1 minutes ago
+  Last WireGuard handshake: -
+  Transfer status (received/sent) 0 B/0 B
+  Quantum resistance: false
+  Networks: -
+  Latency: 0s
+
+ icebot-capstone.netbird.cloud:
+  NetBird IP: 100.81.182.229
+  NetBird IPv6: fd3e:3bf7:60ed:cca7:494:c54f:227b:f92a
+  Public key: zMFU/WGs8FiN6N+aPPkgPnqy58UHwBxyl3aXsmUpyHw=
+  Status: Idle
+  -- detail --
+  Connection type: -
+  ICE candidate (Local/Remote): -/-
+  ICE candidate endpoints (Local/Remote): -/-
+  Relay server address: 
+  Last connection update: -
+  Last WireGuard handshake: -
+  Transfer status (received/sent) 0 B/0 B
+  Quantum resistance: false
+  Networks: -
+  Latency: 0s
+
+Events:
+  [INFO] SYSTEM (822722c8-81a8-4815-b403-b1047fba6324)
+    Message: Network map updated
+    Time: 5 hours, 28 minutes ago
+  [INFO] SYSTEM (d3d0c58b-aed3-4d31-919d-8e346edaff39)
+    Message: Network map updated
+    Time: 5 hours, 28 minutes ago
+  [INFO] SYSTEM (e3ccdd01-bbf9-4eec-8b1f-e668e12b8f1b)
+    Message: Network map updated
+    Time: 4 hours, 56 minutes ago
+  [INFO] SYSTEM (4c8bed7a-2f21-4114-9453-8c4565e8cc8f)
+    Message: Network map updated
+    Time: 4 hours, 46 minutes ago
+  [INFO] SYSTEM (99cb6752-c87c-4b8b-8102-5d8544305fa6)
+    Message: Network map updated
+    Time: 4 hours, 45 minutes ago
+  [INFO] SYSTEM (58dc7742-f451-4355-916d-ece7c7652a04)
+    Message: Network map updated
+    Time: 4 hours, 39 minutes ago
+  [INFO] SYSTEM (7e57a0fe-90e2-4ca1-8f1a-a3ad8a2f2048)
+    Message: Network map updated
+    Time: 4 hours, 27 minutes ago
+  [INFO] SYSTEM (ef16e384-d2cf-4ea6-9a83-1126ebc13c43)
+    Message: Network map updated
+    Time: 2 hours, 38 minutes ago
+  [INFO] SYSTEM (115f5de0-2fa0-4ba2-8d2b-54365833c91d)
+    Message: Network map updated
+    Time: 2 hours, 28 minutes ago
+  [INFO] SYSTEM (2bc2650b-282b-4fd7-b825-0435127aeda5)
+    Message: Network map updated
+    Time: 2 hours, 27 minutes ago
+OS: linux/amd64
+Daemon version: 0.76.3
+CLI version: 0.76.3
+Profile: default
+Management: Connected to https://api.netbird.io:443
+Signal: Connected to https://signal.netbird.io:443
+Relays: 
+  [stun:stun.netbird.io:443] is Checking...
+  [stun:stun.netbird.io:5555] is Checking...
+  [turns:turn.netbird.io:443?transport=tcp] is Checking...
+  [rels://streamline-sg-sin1-1.relay.netbird.io:443] is Available via ws
+Nameservers: 
+FQDN: icebot-cloud-prod.netbird.cloud
+NetBird IP: 100.81.247.172/16
+NetBird IPv6: fd3e:3bf7:60ed:cca7:dd6b:94a1:d6ee:42cd/64
+Interface type: Kernel
+Wireguard port: 51820
+Quantum resistance: false
+Lazy connection: true
+SSH Server: Disabled
+Networks: -
+Peers count: 1/5 Connected

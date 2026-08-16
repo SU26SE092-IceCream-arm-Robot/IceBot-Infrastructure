@@ -1,0 +1,4 @@
+NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE     SELECTOR
+icebot-backend   ClusterIP   10.43.198.12   <none>        8080/TCP            5d20h   app=icebot-backend
+minio            ClusterIP   10.43.112.93   <none>        9000/TCP,9001/TCP   5d22h   app=minio
+postgres         ClusterIP   None           <none>        5432/TCP            5d23h   app=postgres

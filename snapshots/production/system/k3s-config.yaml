@@ -1,0 +1,6 @@
+write-kubeconfig-mode: "0600"
+prefer-bundled-bin: true
+node-name: icebot-cloud-prod
+
+kubelet-arg:
+  - "cgroup-driver=cgroupfs"

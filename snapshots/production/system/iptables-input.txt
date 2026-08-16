@@ -1,0 +1,11 @@
+Chain INPUT (policy ACCEPT 1241 packets, 350K bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1     1796  488K KUBE-ROUTER-INPUT  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* kube-router netpol - 4IA2OSFRMVNDXBVV */
+2        0     0 ACCEPT     all  --  wt0    *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+3        0     0 NETBIRD-ACL-INPUT  all  --  wt0    *       0.0.0.0/0            0.0.0.0/0           
+4        0     0 DROP       all  --  wt0    *       0.0.0.0/0            0.0.0.0/0           
+5       81  5157 KUBE-PROXY-FIREWALL  all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate NEW /* kubernetes load balancer firewall */
+6     1241  350K KUBE-NODEPORTS  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* kubernetes health check service ports */
+7       81  5157 KUBE-EXTERNAL-SERVICES  all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate NEW /* kubernetes externally-visible service portals */
+8     1241  350K KUBE-FIREWALL  all  --  *      *       0.0.0.0/0            0.0.0.0/0           
+9        0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* KUBE-ROUTER rule to explicitly ACCEPT traffic that comply to network policies */ mark match 0x20000/0x20000

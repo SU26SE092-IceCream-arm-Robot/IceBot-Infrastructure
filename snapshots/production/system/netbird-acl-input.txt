@@ -1,0 +1,7 @@
+Chain NETBIRD-ACL-INPUT (1 references)
+num   pkts bytes target     prot opt in     out     source               destination         
+1        0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            match-set nb0000001 src
+2        0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            match-set nb0000063 src
+3        0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            match-set nb0000081 src
+4        0     0 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            match-set nb0000083 src
+5        0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            match-set nb0000093-dport src tcp dpt:443

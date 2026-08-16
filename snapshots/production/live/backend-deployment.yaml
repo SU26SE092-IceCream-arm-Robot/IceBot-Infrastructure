@@ -1,0 +1,156 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "33"
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"name":"icebot-backend","namespace":"icebot"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"icebot-backend"}},"template":{"metadata":{"labels":{"app":"icebot-backend"}},"spec":{"containers":[{"env":[{"name":"ConnectionStrings__IceBot_DB","valueFrom":{"secretKeyRef":{"key":"DB_CONNECTION_STRING","name":"icebot-env"}}},{"name":"PublicOrderAccess__KeyRingDirectory","valueFrom":{"secretKeyRef":{"key":"PUBLIC_ORDER_ACCESS_KEY_RING_DIR","name":"icebot-env"}}},{"name":"Email__Host","valueFrom":{"secretKeyRef":{"key":"EMAIL_HOST","name":"icebot-env"}}},{"name":"Email__Port","valueFrom":{"secretKeyRef":{"key":"EMAIL_PORT","name":"icebot-env"}}},{"name":"Email__From","valueFrom":{"secretKeyRef":{"key":"EMAIL_FROM","name":"icebot-env"}}},{"name":"Email__DisplayName","valueFrom":{"secretKeyRef":{"key":"EMAIL_DISPLAY_NAME","name":"icebot-env"}}},{"name":"Email__UserName","valueFrom":{"secretKeyRef":{"key":"EMAIL_USERNAME","name":"icebot-env"}}},{"name":"Email__Password","valueFrom":{"secretKeyRef":{"key":"EMAIL_PASSWORD","name":"icebot-env"}}},{"name":"Email__EnableSsl","valueFrom":{"secretKeyRef":{"key":"EMAIL_ENABLE_SSL","name":"icebot-env"}}},{"name":"Email__InvitationBaseUrl","valueFrom":{"secretKeyRef":{"key":"EMAIL_INVITATION_BASE_URL","name":"icebot-env"}}},{"name":"Email__PasswordResetBaseUrl","valueFrom":{"secretKeyRef":{"key":"EMAIL_PASSWORD_RESET_BASE_URL","name":"icebot-env"}}},{"name":"RobotArtifacts__ObjectStorage__Endpoint","value":"minio:9000"},{"name":"RobotArtifacts__ObjectStorage__DownloadEndpoint","value":"minio:9000"},{"name":"RobotArtifacts__ObjectStorage__AccessKey","valueFrom":{"secretKeyRef":{"key":"MINIO_ROOT_USER","name":"icebot-env"}}},{"name":"RobotArtifacts__ObjectStorage__SecretKey","valueFrom":{"secretKeyRef":{"key":"MINIO_ROOT_PASSWORD","name":"icebot-env"}}}],"envFrom":[{"secretRef":{"name":"icebot-env"}}],"image":"ghcr.io/su26se092-icecream-arm-robot/icebot-backend:14606e8e91f81ede490211d57815195a5c868a42","imagePullPolicy":"IfNotPresent","name":"backend","ports":[{"containerPort":8080,"name":"http"}],"resources":{"limits":{"cpu":"1","memory":"768Mi"},"requests":{"cpu":"100m","memory":"256Mi"}},"volumeMounts":[{"mountPath":"/app/keys","name":"keyring"}]}],"imagePullSecrets":[{"name":"ghcr-pull-secret"}],"volumes":[{"name":"keyring","persistentVolumeClaim":{"claimName":"icebot-keyring"}}]}}}}
+  creationTimestamp: "2026-08-10T21:45:02Z"
+  generation: 33
+  name: icebot-backend
+  namespace: icebot
+  resourceVersion: "159379"
+  uid: c849c291-ac21-4fbd-a9a7-00b57ec86644
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: icebot-backend
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/restartedAt: "2026-08-16T17:47:32+07:00"
+      creationTimestamp: null
+      labels:
+        app: icebot-backend
+    spec:
+      containers:
+      - env:
+        - name: ConnectionStrings__IceBot_DB
+          valueFrom:
+            secretKeyRef:
+              key: DB_CONNECTION_STRING
+              name: icebot-env
+        - name: PublicOrderAccess__KeyRingDirectory
+          valueFrom:
+            secretKeyRef:
+              key: PUBLIC_ORDER_ACCESS_KEY_RING_DIR
+              name: icebot-env
+        - name: Email__Host
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_HOST
+              name: icebot-env
+        - name: Email__Port
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_PORT
+              name: icebot-env
+        - name: Email__From
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_FROM
+              name: icebot-env
+        - name: Email__DisplayName
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_DISPLAY_NAME
+              name: icebot-env
+        - name: Email__UserName
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_USERNAME
+              name: icebot-env
+        - name: Email__Password
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_PASSWORD
+              name: icebot-env
+        - name: Email__EnableSsl
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_ENABLE_SSL
+              name: icebot-env
+        - name: Email__InvitationBaseUrl
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_INVITATION_BASE_URL
+              name: icebot-env
+        - name: Email__PasswordResetBaseUrl
+          valueFrom:
+            secretKeyRef:
+              key: EMAIL_PASSWORD_RESET_BASE_URL
+              name: icebot-env
+        - name: RobotArtifacts__ObjectStorage__Endpoint
+          value: minio:9000
+        - name: RobotArtifacts__ObjectStorage__DownloadEndpoint
+          value: minio:9000
+        - name: RobotArtifacts__ObjectStorage__AccessKey
+          valueFrom:
+            secretKeyRef:
+              key: MINIO_ROOT_USER
+              name: icebot-env
+        - name: RobotArtifacts__ObjectStorage__SecretKey
+          valueFrom:
+            secretKeyRef:
+              key: MINIO_ROOT_PASSWORD
+              name: icebot-env
+        envFrom:
+        - secretRef:
+            name: icebot-env
+        image: ghcr.io/su26se092-icecream-arm-robot/icebot-backend:11937e8eaa3443ccaa2ac595d21f741fabd09636
+        imagePullPolicy: IfNotPresent
+        name: backend
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "1"
+            memory: 768Mi
+          requests:
+            cpu: 100m
+            memory: 256Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /app/keys
+          name: keyring
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: ghcr-pull-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: keyring
+        persistentVolumeClaim:
+          claimName: icebot-keyring
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2026-08-10T22:11:46Z"
+    lastUpdateTime: "2026-08-10T22:11:46Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2026-08-10T21:45:02Z"
+    lastUpdateTime: "2026-08-16T15:44:41Z"
+    message: ReplicaSet "icebot-backend-d78577c44" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 33
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

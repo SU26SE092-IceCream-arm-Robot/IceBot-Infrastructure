@@ -1,0 +1,16 @@
+NAME                                     READY   STATUS      RESTARTS   AGE     IP            NODE                NOMINATED NODE   READINESS GATES
+cloudflared-55c684775-fbj9r              1/1     Running     0          5d19h   10.42.0.52    icebot-cloud-prod   <none>           <none>
+icebot-backend-d78577c44-tx8jv           1/1     Running     0          157m    10.42.0.103   icebot-cloud-prod   <none>           <none>
+icebot-db-migration-11937e8eaa34-q789v   0/1     Completed   0          158m    10.42.0.102   icebot-cloud-prod   <none>           <none>
+icebot-db-migration-371c81601ef2-tnkwv   0/1     Completed   0          5h58m   10.42.0.94    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-4bac6288cc37-c7ljx   0/1     Completed   0          8h      10.42.0.87    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-4cd4d0e42796-8s6ql   0/1     Completed   0          11h     10.42.0.83    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-8c3d50ab4485-bbkpq   0/1     Completed   0          4h38m   10.42.0.100   icebot-cloud-prod   <none>           <none>
+icebot-db-migration-97b7c90a3360-dffbj   0/1     Completed   0          8h      10.42.0.85    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-b8f310def938-cwwv8   0/1     Completed   0          4h55m   10.42.0.98    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-be3f471d7e75-d757x   0/1     Completed   0          7h42m   10.42.0.89    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-d4b00d98d9ba-brb4r   0/1     Completed   0          5h38m   10.42.0.96    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-fa8c61d4fa1c-p6bjr   0/1     Completed   0          6h29m   10.42.0.92    icebot-cloud-prod   <none>           <none>
+icebot-db-migration-nrcjj                0/1     Completed   0          5d20h   10.42.0.32    icebot-cloud-prod   <none>           <none>
+minio-0                                  1/1     Running     0          5d22h   10.42.0.23    icebot-cloud-prod   <none>           <none>
+postgres-0                               1/1     Running     0          5d23h   10.42.0.20    icebot-cloud-prod   <none>           <none>

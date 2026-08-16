@@ -1,0 +1,6 @@
+21: wt0: <POINTOPOINT,NOARP,UP,LOWER_UP> mtu 1280 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/none 
+    inet 100.81.247.172/16 brd 100.81.255.255 scope global wt0
+       valid_lft forever preferred_lft forever
+    inet6 fd3e:3bf7:60ed:cca7:dd6b:94a1:d6ee:42cd/64 scope global 
+       valid_lft forever preferred_lft forever

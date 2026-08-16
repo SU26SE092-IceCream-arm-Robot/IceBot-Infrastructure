@@ -1,0 +1,4 @@
+NAME                   ADDRESSTYPE   PORTS       ENDPOINTS     AGE
+icebot-backend-cbjg4   IPv4          8080        10.42.0.103   5d20h
+minio-2kxnm            IPv4          9001,9000   10.42.0.23    5d22h
+postgres-7lpzw         IPv4          5432        10.42.0.20    5d23h
